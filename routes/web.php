@@ -15,8 +15,9 @@ Route::get('/', 'MapController@index');
 
 Route::get('/map', 'MapController@map');
 
-Route::get('/add', function (){
+Route::get('/add', function ()
+{
     return view('add');
 });
 
-Route::post('/add','MapController@add');
+Route::post('/add', 'MapController@add');

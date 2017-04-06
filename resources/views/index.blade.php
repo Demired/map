@@ -21,8 +21,9 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="/add">新增节点</a></li>
                 <li><a href="/map">地图</a></li>
-                <li><a href="/list">列表</a></li>
+                <li><a href="/">列表</a></li>
             </ul>
         </div>
     </div>
@@ -38,10 +39,7 @@
             <th>accounts</th>
             <th>continent</th>
             <th>country</th>
-            <th>province</th>
-            <th>city</th>
             <th>coordinate</th>
-            <th>startTime</th>
             <th>billing</th>
             <th>status</th>
         </tr>
@@ -50,12 +48,15 @@
         @foreach ($vpss as $vps)
             <tr>
                 <td>{{ $vps->id }}</td>
+                <td>{{ $vps->nickname }}</td>
                 <td>{{ $vps->ip }}</td>
-                <td>{{ $vps->ip }}</td>
-                <td>{{ $vps->ip }}</td>
-                <td>{{ $vps->ip }}</td>
-                <td>{{ $vps->ip }}</td>
-                <td>{{ $vps->ip }}</td>
+                <td><a href="{{ $vps->website }}">官网</a></td>
+                <td>{{ $vps->accounts }}</td>
+                <td>{{ $vps->continent }}</td>
+                <td>{{ $vps->country }}</td>
+                <td><a href="{{ $vps->lat }},{{$vps->lng}}">地图</a></td>
+                 <td>{{ $vps->billing }}</td>
+                <td>{{ $vps->status }}</td>
             </tr>
         @endforeach
         </tbody>
